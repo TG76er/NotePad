@@ -18,6 +18,7 @@ var fieldsToExport = [
     "Comm Referral",
     "DE Service",
     "Ergo Rep",
+    "Design Lead",
     "SO Number",
     "Stratus Qty",
     "Universal Qty",
