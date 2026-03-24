@@ -1,6 +1,7 @@
 // === EXPORT ONLY SPECIFIC FIELDS TO CSV ===
 // List your exact field names here (case-sensitive!)
 var fieldsToExport = [
+    "Month",
     "Date",
     "DoctorName",        // Change these to your actual field names
     "Money In",
