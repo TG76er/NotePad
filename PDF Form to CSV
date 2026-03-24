@@ -1,0 +1,25 @@
+// Export form data as CSV that opens nicely in Excel
+var fieldValues = [];
+var fieldNames = [];
+
+// Loop through every field in the form
+for (var i = 0; i < this.numFields; i++) {
+    var fieldName = this.getNthFieldName(i);
+    var field = this.getField(fieldName);
+    
+    fieldNames.push(fieldName);           // Column headers
+    fieldValues.push('"' + (field.value || "").toString().replace(/"/g, '""') + '"');  // Escape quotes
+}
+
+// Create CSV content: first row = field names, second row = values
+var csvContent = fieldNames.join(",") + "\r\n" + fieldValues.join(",");
+
+// Create and export the data object
+this.createDataObject("form_data.csv", csvContent);
+this.exportDataObject({
+    cName: "form_data.csv",
+    nLaunch: 2   // 2 = open the file automatically with default app (Excel)
+});
+
+// Optional: alert the user
+app.alert("Form data exported to CSV and opened in Excel.\nYou can save it as .xlsx if needed.", 3);
