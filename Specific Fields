@@ -44,9 +44,6 @@ for (var i = 0; i < fieldsToExport.length; i++) {
     }
 }
 
-// Add timestamp as the last column
-header.push("SubmissionTime");
-values.push('"' + timestamp + '"');
 
 // Create the CSV content
 var csvContent = header.join(",") + "\r\n" + values.join(",");
