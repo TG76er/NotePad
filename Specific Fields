@@ -1,13 +1,13 @@
 // === EXPORT ONLY SPECIFIC FIELDS TO CSV ===
 // List your exact field names here (case-sensitive!)
 var fieldsToExport = [
-    "FullName",      // Change these to your actual field names
-    "Email",
-    "Phone",
+    "DoctorName",      // Change these to your actual field names
+    "ErgoRep",
+    "Date",
     "Company",
     "Date",
-    "TotalAmount",
-    "Comments"
+    "Referral Source",
+    "SO Number"
 ];
 
 // Optional: Add a timestamp column
