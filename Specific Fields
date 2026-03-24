@@ -4,14 +4,11 @@ var fieldsToExport = [
     "DoctorName",      // Change these to your actual field names
     "ErgoRep",
     "Date",
-    "Company",
+    "Blank Space",
     "Date",
     "Referral Source",
     "SO Number"
 ];
-
-// Optional: Add a timestamp column
-var timestamp = util.printd("yyyy-mm-dd HH:MM:ss", new Date());
 
 // Build the header row and data row
 var header = [];
