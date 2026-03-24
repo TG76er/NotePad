@@ -16,7 +16,7 @@ var fieldsToExport = [
     "Discount Average",   // Calc
     "Referral Source",
     "Comm Referral",
-    "DE Service",
+    "DE Services",
     "Ergo Rep",
     "Design Lead",
     "SO Number",
