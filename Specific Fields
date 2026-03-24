@@ -1,13 +1,28 @@
 // === EXPORT ONLY SPECIFIC FIELDS TO CSV ===
 // List your exact field names here (case-sensitive!)
 var fieldsToExport = [
-    "DoctorName",      // Change these to your actual field names
-    "ErgoRep",
     "Date",
-    "Blank Space",
-    "Date",
+    "DoctorName",        // Change these to your actual field names
+    "Money In",
+    "Balance Due",        // Calc
+    "Total Sale",
+    "Discount",
+    "Sales Tax",
+    "Install Fee",
+    "Shipping Cost",
+    "Total After Tax",    // Calc
+    "Total After Tax And Service",  // Calc
+    "Discount Average",   // Calc
     "Referral Source",
-    "SO Number"
+    "Comm Referral",
+    "DE Service",
+    "Ergo Rep",
+    "SO Number",
+    "Stratus Qty",
+    "Universal Qty",
+    "Horizon Qty",
+    "Terra Qty",
+    "Hyg Qty",
 ];
 
 // Build the header row and data row
