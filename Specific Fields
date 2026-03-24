@@ -1,0 +1,48 @@
+// === EXPORT ONLY SPECIFIC FIELDS TO CSV ===
+// List your exact field names here (case-sensitive!)
+var fieldsToExport = [
+    "FullName",      // Change these to your actual field names
+    "Email",
+    "Phone",
+    "Company",
+    "Date",
+    "TotalAmount",
+    "Comments"
+];
+
+// Optional: Add a timestamp column
+var timestamp = util.printd("yyyy-mm-dd HH:MM:ss", new Date());
+
+// Build the header row and data row
+var header = [];
+var values = [];
+
+for (var i = 0; i < fieldsToExport.length; i++) {
+    var fieldName = fieldsToExport[i];
+    var field = this.getField(fieldName);
+    
+    header.push(fieldName);
+    
+    if (field == null) {
+        values.push('""');                    // Empty if field doesn't exist
+    } else {
+        var val = (field.value || "").toString().replace(/"/g, '""');
+        values.push('"' + val + '"');
+    }
+}
+
+// Add timestamp as the last column
+header.push("SubmissionTime");
+values.push('"' + timestamp + '"');
+
+// Create the CSV content
+var csvContent = header.join(",") + "\r\n" + values.join(",");
+
+// Export and open in Excel
+this.createDataObject("Selected_Form_Data.csv", csvContent);
+this.exportDataObject({
+    cName: "Selected_Form_Data.csv",
+    nLaunch: 2          // 2 = open automatically with Excel (or default app)
+});
+
+app.alert("Selected form data exported successfully!\n\nThe CSV file has opened in Excel.\nYou can save it as .xlsx.", 3);
